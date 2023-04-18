@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\BlogsRequest;
+use App\Http\Controllers\BlogRequest;
+use App\Http\Controllers\BlogController;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class RegisterRequest extends FormRequest
+class BlogRequest extends BlogsRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,15 +24,11 @@ class RegisterRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
-
-         
+    {        
         return [
-            'email' => 'required|unique:users,email',
-            'username' => 'required|unique:users,username',
-            'password' => 'required|min:8',
-            'password_confirmation' => 'required|same:password',
-            
+            'title' => 'required|blog,title',
+            'content' => 'required|blog,content',
+            'image' =>  'required|blog,image',           
         ];
     }
 }

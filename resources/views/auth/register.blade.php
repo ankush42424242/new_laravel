@@ -48,11 +48,11 @@
     </form>
 @endsection
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function(){
-    //alert("here");
+    alert("here");
     jQuery('#myform').validate({ 
 
         rules: {
@@ -67,7 +67,7 @@
             },
             password_confirmation: {
                 required: true
-            }
+            },
               
         },
         messages: {
