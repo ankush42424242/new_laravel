@@ -40,19 +40,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Logout Routes
          */
-        Route::get('/logout', 'LogoutController@perform')->name('logout.perform'); 
-        
-        Route::get('/blog', 'BlogController@performm')->name('blog.performm');
-        Route::post('/blog', 'BlogController@bregister')->name('blog.perform'); 
-
-
-       Route::post('/products', 'ProductController@index')->name('products.index'); 
-
-        Route::get('/products', 'ProductController@create')->name('products.create'); 
-
+         Route::get('/logout', 'LogoutController@perform')->name('logout.perform'); 
+         Route::get('/blog', 'BlogController@performm')->name('blog.performm');
+         Route::post('/blog', 'BlogController@bregister')->name('blog.perform'); 
+         Route::get('/index', 'ProductController@index')->name('products.index'); 
+         Route::get('/products', 'ProductController@create')->name('products.create'); 
          Route::post('/products', 'ProductController@store')->name('products.store');
-
-
 
     });
 });

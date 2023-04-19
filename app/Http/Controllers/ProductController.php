@@ -1,6 +1,7 @@
 <?php
   
 namespace App\Http\Controllers;
+  
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProductController;
@@ -12,7 +13,7 @@ class ProductController extends Controller
     {
         $products = Product::latest()->paginate(5);
     
-        return view('products.index')
+        return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -39,25 +40,22 @@ class ProductController extends Controller
         }
     
         Product::create($input);
-
-
-
+     
         return redirect()->route('products.index')
                         ->with('success','Product created successfully.');
-
-
     }
      
+    
     public function show(Product $product)
     {
-        return view('products.show');
+        return view('products.show',compact('product'));
     }
 
     public function edit(Product $product)
     {
-        return view('products.edit');
+        return view('products.edit',compact('product'));
     }
-    
+
     public function update(Request $request, Product $product)
     {
         $request->validate([
@@ -72,7 +70,7 @@ class ProductController extends Controller
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
-        }else     {
+        }else{
             unset($input['image']);
         }
           
@@ -82,6 +80,12 @@ class ProductController extends Controller
                         ->with('success','Product updated successfully');
     }
   
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Product $product)
     {
         $product->delete();
