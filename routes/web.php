@@ -35,7 +35,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('/login', 'LoginController@login')->name('login.perform');
        
     });
-
     Route::group(['middleware' => ['auth']], function() {
         /**
          * Logout Routes
@@ -45,7 +44,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          Route::post('/blog', 'BlogController@bregister')->name('blog.perform'); 
          Route::get('/index', 'ProductController@index')->name('products.index'); 
          Route::get('/products', 'ProductController@create')->name('products.create'); 
-         Route::post('/products', 'ProductController@store')->name('products.store');
+         Route::post('/store', 'ProductController@store')->name('products.store');
+         Route::get('/destroy', 'ProductController@destroy')->name('products.destroy');
+         Route::get('/show', 'ProductController@show')->name('products.show');
+         Route::get('/edit', 'ProductController@edit')->name('products.edit');
+         Route::post('/index', 'ProductController@update')->name('products.update');
 
     });
 });

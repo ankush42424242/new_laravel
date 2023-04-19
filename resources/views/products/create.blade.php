@@ -1,11 +1,15 @@
 @extends('products.layout')
   
 @section('content')
+
+ <a href="{{ route('logout.perform') }}" class="btn btn-primary">Logout</a>
+ <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Add New Blog</h2>
         </div>
+
         <div class="pull-right">
             
         </div>

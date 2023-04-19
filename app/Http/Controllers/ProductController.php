@@ -1,7 +1,6 @@
 <?php
   
 namespace App\Http\Controllers;
-  
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProductController;
@@ -79,17 +78,10 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product updated successfully');
     }
-  
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Product $product)
+
+        public function destroy(Product $product)
     {
         $product->delete();
-     
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
