@@ -28,6 +28,8 @@ return array(
     'App\\Http\\Requests\\BlogRequest' => $baseDir . '/app/Http/Requests/BlogRequest.php',
     'App\\Http\\Requests\\LoginRequest' => $baseDir . '/app/Http/Requests/LoginRequest.php',
     'App\\Http\\Requests\\RegisterRequest' => $baseDir . '/app/Http/Requests/RegisterRequest.php',
+    'App\\Models\\Blog' => $baseDir . '/app/Models/Blog.php',
+    'App\\Models\\Inserts' => $baseDir . '/app/Models/Inserts.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

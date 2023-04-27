@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\InsertController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,13 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {  
-  
+    Route::get('/student', 'InsertController@insert')->name('auth.student');
+    Route::post('/studentlist', 'InsertController@studentlist')->name('auth.studentlist');
+   //Route::get('/studentlist', 'InsertController@studentlist')->name('auth.studentlist');
     /**
      * Home Routes
      */

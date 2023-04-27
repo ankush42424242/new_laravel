@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
   
-class Insert extends Model
+class Inserts extends Model
 {
     use HasFactory;
   
     protected $fillable = [
-        'name', 'detail', 'image'
+        'name', 'last_name', 'email'
     ];
 }
