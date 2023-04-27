@@ -16,13 +16,11 @@ use App\Http\Controllers\InsertController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {  
     Route::get('/student', 'InsertController@insert')->name('auth.student');
-    Route::post('/studentlist', 'InsertController@studentlist')->name('auth.studentlist');
-   //Route::get('/studentlist', 'InsertController@studentlist')->name('auth.studentlist');
+    Route::post('/studentlist', 'InsertController@insertt')->name('auth.studentlist');
+   Route::get('/studentlist', 'InsertController@studentlist')->name('auth.studentlist');
     /**
      * Home Routes
      */

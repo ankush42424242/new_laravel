@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Inserts;
 use App\Http\Controllers\InsertController;
 use Illuminate\Http\Request;
@@ -16,7 +14,7 @@ class InsertController extends Controller
 
         public function studentlist(){
             $students = Inserts::latest()->paginate(5);
-            return view('auth.studentlist',compact('students'))->with('i',(request()->input('page', 1) - 1) * 5);
+               return view('auth.studentlist',compact('students'))->with('i',(request()->input('page', 1) - 1) * 5);
        }
     
     public function insertt(Request $request){
@@ -39,12 +37,9 @@ class InsertController extends Controller
                 $student->email = $data['email'];
                  $student->save();
                 return redirect()->route('auth.studentlist')
-                        ->with('success','Product created successfully.');
+                        ->with('success','user  created successfully.');
         }
     }
-
-
-
     /*public function studentAlllist(Student $student)
     {
         return view('auth.studentlist',compact('student'));

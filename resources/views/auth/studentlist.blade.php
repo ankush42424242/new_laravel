@@ -27,3 +27,4 @@
 @endforeach
         
     </table>
+    {!! $students->links() !!}

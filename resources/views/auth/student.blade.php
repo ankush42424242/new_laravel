@@ -9,7 +9,7 @@
 <div class="container">
   <h2 class="text-center">Student Management</h2>
   <br>
-   <form action="{{ route('auth.studentlist') }}" method="Post" class="form-group" style="width:70%; margin-left:15%;">
+   <form action="{{ route('auth.studentlist') }}" method="POST" class="form-group" style="width:70%; margin-left:15%;">
    <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
     <label for="floatingEmail">First Name</label>
