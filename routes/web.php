@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\InsertController;
+use App\Http\Controllers\studentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,10 @@ use App\Http\Controllers\InsertController;
 */
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {  
-    Route::get('/student', 'InsertController@insert')->name('auth.student');
-    Route::post('/studentlist', 'InsertController@insertt')->name('auth.studentlist');
-   Route::get('/studentlist', 'InsertController@studentlist')->name('auth.studentlist');
+    Route::get('/students', 'studentController@insert')->name('auth.student');
+    Route::post('/studentlist', 'studentController@insertt')->name('auth.studentlist');
+    Route::get('/studentlist', 'studentController@studentlist')->name('auth.studentlist');
+    Route::get('/studentspdf', 'studentController@createPDF')->name('/');
     /**
      * Home Routes
      */

@@ -7,9 +7,12 @@
 
 </head>
 <div class="container">
+
+   
   <h2 class="text-center">Student Management</h2>
+   <a href="/studentlist" class="btn btn-primary">All users list</a>
   <br>
-   <form action="{{ route('auth.studentlist') }}" method="POST" class="form-group" style="width:70%; margin-left:15%;">
+   <form action="{{ route('auth.studentlist') }}" method="POST" class="form-group" id="myform" style="width:70%; margin-left:15%;">
    <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
     <label for="floatingEmail">First Name</label>
@@ -33,3 +36,43 @@
     <button type="submit"  value = "Add student" class="btn btn-primary">Submit</button>
   </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+    jQuery('#myform').validate({ 
+        rules: {
+            name: {
+                required: true
+            },
+            last_name: {
+                required: true
+            },
+            email: {
+                required: true
+            }, 
+        },
+        messages: {
+            name: {
+                required: "Enter your Name"
+            },
+            last_name: {
+                required: "Enter your lastname"
+            },
+            email: {
+                required: "Enter your Email"
+            },
+        }
+    });
+
+    jQuery('[name*="field"]').each(function () {
+        jQuery(this).rules('add', {
+            required: true,
+            messages: {
+                required: "Enter something else"
+            }
+        });
+    });
+
+});
+</script>
