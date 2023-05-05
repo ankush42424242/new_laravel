@@ -33,7 +33,7 @@
             @endif
   
     <input type="text" class="form-control" placeholder="Enter Email" name="email"><br>
-    <button type="submit"  value = "Add student" class="btn btn-primary">Submit</button>
+    <button type="submit"  value ="Add student" class="btn btn-primary">Submit</button>
   </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

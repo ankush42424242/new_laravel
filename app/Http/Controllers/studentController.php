@@ -5,12 +5,13 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use DB;
 use PDF;
 
 class StudentController extends Controller 
 {
        public function insert(){
-        return view('auth.student');
+        return view('auth.students');
        }
 
         public function studentlist(){
@@ -42,10 +43,18 @@ class StudentController extends Controller
         }
     }
 
-    public function createPDF() {
-      $data = Student::all();
-      view()->share('students',$data);
-      $pdf = PDF::loadView('auth.pdf_file', $data)->output();
-      return $pdf->download('pdf_file.pdf');
-    }
+    public function studentpdfs() {
+      /*$data = Student::all();
+        view()->share('students',$data);
+
+      $pdf = PDF::loadView('auth.studentpdf', $data);
+     // print_r($pdf);
+      return $pdf->download('studentpdf.pdf');*/
+    
+            $items = DB::table("students")->get();
+            view()->share('students',$items);
+            $pdf = PDF::loadView('auth.studentpdf');
+            return $pdf->download('studentpdf.pdf');
+
+ }
 }

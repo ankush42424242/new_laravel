@@ -18,10 +18,10 @@ use App\Http\Controllers\studentController;
 */
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {  
-    Route::get('/students', 'studentController@insert')->name('auth.student');
+    Route::get('/students', 'studentController@insert')->name('auth.students');
     Route::post('/studentlist', 'studentController@insertt')->name('auth.studentlist');
     Route::get('/studentlist', 'studentController@studentlist')->name('auth.studentlist');
-    Route::get('/studentspdf', 'studentController@createPDF')->name('/');
+    Route::get('/studentspdf', 'studentController@studentpdfs')->name('auth.studentpdf');
     /**
      * Home Routes
      */
