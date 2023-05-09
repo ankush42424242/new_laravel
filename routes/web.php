@@ -22,6 +22,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('/studentlist', 'studentController@insertt')->name('auth.studentlist');
     Route::get('/studentlist', 'studentController@studentlist')->name('auth.studentlist');
     Route::get('/studentspdf', 'studentController@studentpdfs')->name('auth.studentpdf');
+    Route::get('/studentscsv', 'studentController@studentexport')->name('auth.studentcsv');
     /**
      * Home Routes
      */

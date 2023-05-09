@@ -2,9 +2,10 @@
 
 <a href="/students" class="btn btn-outline-light me-2">Add students</a>
 <a class="btn btn-primary" href="{{ URL::to('/studentspdf') }}">Export to PDF</a>
+<a class="btn btn-primary" href="{{ URL::to('/studentscsv') }}">Export to CSV</a>
 @if ($message = Session::get('success'))
         <div class="alert alert-success">
-            <p>{{ $message }}</p>
+            <p>{{ $message }}</p> 
         </div>
     @endif
 

@@ -5,6 +5,8 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
 use DB;
 use PDF;
 
@@ -57,4 +59,9 @@ class StudentController extends Controller
             return $pdf->download('studentpdf.pdf');
 
  }
+ public function studentexport() 
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
+    }
+
 }

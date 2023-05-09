@@ -7,8 +7,6 @@
 
 </head>
 <div class="container">
-
-   
   <h2 class="text-center">Student Management</h2>
    <a href="/studentlist" class="btn btn-primary">All users list</a>
   <br>
