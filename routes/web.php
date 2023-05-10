@@ -16,6 +16,18 @@ use App\Http\Controllers\studentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/refresh', [AuthController::class, 'refresh']);
+    Route::get('/user-profile', [AuthController::class, 'userProfile']);    
+});
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {  
     Route::get('/students', 'studentController@insert')->name('auth.students');

@@ -64,4 +64,11 @@ class StudentController extends Controller
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 
+    /*public function uploadUsers(Request $request)
+{
+        Excel::import(new UsersImport, $request->file);
+
+        return redirect()->route('users.index')->with('success', 'User Imported Successfully');
+}*/
+
 }
